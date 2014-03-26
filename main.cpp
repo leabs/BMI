@@ -1,5 +1,4 @@
 /**********************************************************************
-* Program Name: Program_1
 * Author: Steven Leabo
 * Program Description:
 * This program will display the BMI of a user after prompting them to
