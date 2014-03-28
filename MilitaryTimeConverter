@@ -1,5 +1,5 @@
 /**********************************************************************
-* Program Name: Program 4
+* Program Name: MilitaryTimeConverter
 * Author: Steven Leabo
 * Program description: This program will ask the user for two times (military).
 * First a starting time, then an ending time. The end time must be after the
