@@ -1,0 +1,142 @@
+/**********************************************************************
+* Program Name: Program 4
+* Author: Steven Leabo
+* Program description: This program will ask the user for two times (military).
+* First a starting time, then an ending time. The end time must be after the
+* start time. The program will then calculate the time difference and display
+* the result in minutes. 
+**********************************************************************/
+
+/************************** Compiler Directives **********************/
+
+    #include <iostream>
+    #include <string> // For string variables 
+    
+    using namespace std;
+
+///////////////////////////Initial Algorithm/////////////////////////////
+/*   
+      -Ask user to enter a start time
+      -Ask user to enter an end time
+      -Ensure end time is after start time
+      -Output calculation (using function name)
+      -Ask user if they would like to restart the program
+      -If not, end the program
+*/
+/////////////////////////////////////////////////////////////////////////
+
+///////////////////////////Refined Algorithm////////////////////////////
+/*
+        WHILE (Y != SENTINEL)
+        {    
+
+            DISPLAY output for start time
+                    ASSIGN TIME1
+            
+            DISPLAY output for end time
+                    ASSIGN TIME2
+            
+                    IF(time1>time2 || time1==time2)
+                       {
+                             printError(); FUNCTION
+                       
+                       } 
+         DISPLAY the results using function name    
+               
+                             elapsedTime FUNCTION
+                                        
+         RESTART program or INPUT Y to EXIT
+                            
+         }
+
+         PAUSE screen to view output
+               
+        END main  
+*/
+///////////////////////////////////////////////////////////////////////
+
+////////////////////////////functions used/////////////////////////////
+
+    //Calculates elapsed time (converted to minutes)
+    int elapsedTime(int time1, int time2);
+
+    //Prints out error if time1>=time2
+    void printError();
+    
+/*************** Begin main Function Executables *****************/
+
+    int main()
+    {
+    
+/*************************Local Variables*****************************/
+
+    int time1;
+    int time2;
+    int start;
+    char Y = '\0' ;
+    const char SENTINEL = 'Y' ;
+
+/**********************************************************************/
+        
+           while (Y != SENTINEL)
+           {    
+                
+           //Display directions for user to enter times
+           cout << "This program will calculate elapsed time (in military format) using a function." << endl;
+           cout << "Enter time in that format (example: 12 noon will be represented as 1200, \n3:30 pm will be represented as 1530)"<< endl;
+                    
+           //Enter a start time                                                                     
+           cout << "\nPlease enter a start time: " << endl;
+           cin >> time1;
+                    
+           //Enter an end time
+           cout << "Please enter an end time (must be a later time): " << endl;
+           cin >> time2;
+           cout << endl;
+                    
+                               //Test that time1>time2 using boolean function
+                               if (time1>time2 || time1==time2)
+                               {
+                               //Print error function
+                               printError();
+                               
+                               //pause screen to view output
+                               system ("pause");
+                                                
+                               //Here is where you indicate to the OS a successful termination of your program
+                               return 0;
+                               } 
+                               
+           //Display the results using function name          
+           cout << "\nThe elapsed time is "<< elapsedTime(time1, time2) << " minutes. " <<endl;
+                       
+           //Ask user if they would like to restart (using DO/WHILE loop        
+           cout << "\nEnter any key to RESTART, otherwise enter Y to exit. " << endl;
+           cin >> Y;
+                                    
+           }
+
+                //pause screen to view output
+                system ("pause");
+                
+                //Here is where you indicate to the OS a successful termination of your program
+                return 0;
+               
+    //end main         
+    } 
+ 
+/*******************************************************************************/
+  
+    //Elapsed time function (converts to minutes)
+    int elapsedTime(int time1, int time2)
+    {
+        int start = (time1 / 100) * 60 + (time1 % 100);
+        int end = (time2 / 100) * 60 + (time2 % 100);
+        return(end-start);
+    }//End elapsed time function
+    
+    //Error check function
+     void printError()
+     {
+     cout << "Sorry you have entered an invalid time." << endl;
+     }//End error check function
