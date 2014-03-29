@@ -81,46 +81,46 @@
            while (Y != SENTINEL)
            {    
                 
-           //Display directions for user to enter times
-           cout << "This program will calculate elapsed time (in military format) using a function." << endl;
-           cout << "Enter time in that format (example: 12 noon will be represented as 1200, \n3:30 pm will be represented as 1530)"<< endl;
+                //Display directions for user to enter times
+                cout << "This program will calculate elapsed time (in military format) using a function." << endl;
+                cout << "Enter time in that format (example: 12 noon will be represented as 1200, \n3:30 pm will be represented as 1530)"<< endl;
                     
-           //Enter a start time                                                                     
-           cout << "\nPlease enter a start time: " << endl;
-           cin >> time1;
+                //Enter a start time                                                                     
+                cout << "\nPlease enter a start time: " << endl;
+                cin >> time1;
                     
-           //Enter an end time
-           cout << "Please enter an end time (must be a later time): " << endl;
-           cin >> time2;
-           cout << endl;
+                //Enter an end time
+                cout << "Please enter an end time (must be a later time): " << endl;
+                cin >> time2;
+                cout << endl;
                     
                                //Test that time1>time2 using boolean function
                                if (time1>time2 || time1==time2)
                                {
-                               //Print error function
-                               printError();
+                                    //Print error function
+                                    printError();
                                
-                               //pause screen to view output
-                               system ("pause");
+                                    //pause screen to view output
+                                    system ("pause");
                                                 
-                               //Here is where you indicate to the OS a successful termination of your program
-                               return 0;
+                                    //Here is where you indicate to the OS a successful termination of your program
+                                    return 0;
                                } 
                                
-           //Display the results using function name          
-           cout << "\nThe elapsed time is "<< elapsedTime(time1, time2) << " minutes. " <<endl;
+                //Display the results using function name          
+                cout << "\nThe elapsed time is "<< elapsedTime(time1, time2) << " minutes. " <<endl;
                        
-           //Ask user if they would like to restart (using DO/WHILE loop        
-           cout << "\nEnter any key to RESTART, otherwise enter Y to exit. " << endl;
-           cin >> Y;
+                //Ask user if they would like to restart (using DO/WHILE loop        
+                cout << "\nEnter any key to RESTART, otherwise enter Y to exit. " << endl;
+                cin >> Y;
                                     
            }
 
-                //pause screen to view output
-                system ("pause");
+                     //pause screen to view output
+                     system ("pause");
                 
-                //Here is where you indicate to the OS a successful termination of your program
-                return 0;
+                     //Here is where you indicate to the OS a successful termination of your program
+                     return 0;
                
     //end main         
     } 
@@ -130,13 +130,13 @@
     //Elapsed time function (converts to minutes)
     int elapsedTime(int time1, int time2)
     {
-        int start = (time1 / 100) * 60 + (time1 % 100);
-        int end = (time2 / 100) * 60 + (time2 % 100);
-        return(end-start);
+         int start = (time1 / 100) * 60 + (time1 % 100);
+         int end = (time2 / 100) * 60 + (time2 % 100);
+         return(end-start);
     }//End elapsed time function
     
     //Error check function
      void printError()
      {
-     cout << "Sorry you have entered an invalid time." << endl;
+          cout << "Sorry you have entered an invalid time." << endl;
      }//End error check function
