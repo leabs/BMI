@@ -1,0 +1,31 @@
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+void printVector(vector<int> x)
+{
+     cout << "|";
+     
+     for(int i = 0; i < x.size(); i++)
+     {
+     cout << x[i] << "|";
+     }
+}
+
+int main()
+{
+          
+    vector<int> v(3);
+    
+    v[0] = 10;
+    v[1] = 22;
+    v[2] = 5;
+    
+    v.push_back(7);
+    
+    printVector(v);
+    
+    system("PAUSE");
+    return 0;
+}
