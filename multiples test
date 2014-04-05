@@ -1,0 +1,76 @@
+/**********************************************************************
+* Program Name: Multiples test
+* Author: Steven Leabo
+* Date: 4/18/2014
+* Program description: This program takes 2 INTs and use a function to
+* see if they're multiples of each other.
+**********************************************************************/
+
+/************************** Compiler Directives **********************/
+
+#include <iostream>
+#include <string> // For string variables 
+
+using namespace std;
+
+//Function to test if two INTs are multiples
+int isMultiple(int x, //IN: First number 
+
+               int y);//IN: Second number
+
+/*************** Begin main Function Executables *****************/
+
+int main()
+{
+    
+/*************************Local Variables*****************************/
+
+int x;
+int y;
+
+/**********************************************************************/
+  //Display for user to input first number
+  cout << "Enter first number: " << endl;
+  cin >> x; //Assign INT x
+  
+  //Display for user to input second number
+  cout << "Enter second number: " << endl;
+  cin >> y; //Assign INT y
+  
+      //Run isMultiple function
+      isMultiple(x,y);
+ 
+                  //pause screen to view output
+                  system ("pause");
+                
+                  //Here is where you indicate to the OS a successful termination of your program
+                  return 0;
+               
+ //end main         
+}
+    
+//////////////////////////////////Functions////////////////////////////////////
+    
+    //Function to test if two INTs are multiples
+    //         (x%y=result)
+               
+    //IF x%y == 0
+    //   {
+    //       DISPLAY yes it is a multiple
+    //    }
+    //ELSE IF x%y>0
+    //     {
+    //        DISPLAY no it is NOT a multiple
+    //     }
+    
+    int isMultiple(int x,int y)
+    {
+        if(x%y==0)
+            {
+                cout << "Yes it is a multiple. " << endl;      
+            }
+        else if (x%y>0)
+            {
+                 cout << "No it is NOT a multiple. " << endl; 
+            }
+    }
