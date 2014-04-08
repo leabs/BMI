@@ -1,0 +1,155 @@
+/**********************************************************************
+* Program Name: Program 5
+* Author: Steven Leabo
+* Program description: This program will ask a user to input height in feet and inches
+* and convert to meters using 3 user defined functions (input, calculate, output). 
+**********************************************************************/
+
+///////////////////////////Initial Algorithm/////////////////////////////
+/*   
+     -Ask the user for feet and inches to convert
+     -Assign the feet and inches input to total inches [FUNCTION]
+     -Calculate the conversation (total inches to meters) [FUNCTION]
+     -Display the result [FUNCTION]
+     -Ask to repeat program
+     -Pause screen to display output
+*/
+/////////////////////////////////////////////////////////////////////////
+
+///////////////////////////Refined Algorithm////////////////////////////
+/*
+         DO{
+          
+                 DISPLAY to enter feet
+                        ASSIGN INT feet
+                        
+                 DISPLAY  to enter inches
+                        ASSIGN FLOAT inches
+         
+                        FUNCTION: input(feet, inches, totalInches);
+          
+                        FUNCTION: calculate(totalInches, meters);
+          
+                        FUNCTION: printOutput(meters);
+          
+            }WHILE(repeat ==1);                                                                                                          
+                  
+                  SYSTEM ("PAUSE");
+                
+                  return 0;
+  
+ END main         
+*/
+///////////////////////////////////////////////////////////////////////
+
+/************************** Compiler Directives **********************/
+
+#include <iostream>
+#include <string> // For strings 
+
+using namespace std;
+
+////////////////////////////function prototypes/////////////////////////////
+
+//Function to input numbers [to total inches]
+double input(int, float, float&);
+
+//Function to calculate numbers to meters
+double calculate(float, float&);
+
+//Function to output result
+void printOutput(float);
+
+/***************** Begin main Function Executables *******************/
+int main()
+{ //Start main
+/*************************Local Variables*****************************/
+    int feet; //Input feet
+    int repeat; //Input to control loop
+    float inches; //Input inches
+    float totalInches; //Total inches assigned
+    float meters; //Total meters converted
+/**********************************************************************/
+       do{// DO/WHILE loop to repeat program for user
+          
+                  //Output asking for feet to convert
+                  cout << "Please enter total feet you would like to convert (as a whole number): " << endl;
+                  
+                      //Assign to INT feet
+                      cin >> feet;
+                  
+                  //Output asking for inches to convert
+                  cout << "Please enter remaining inches you would like to convert: " << endl;
+                  
+                      //Assign to float inches
+                      cin >> inches;
+                 
+                  //Function to input numbers [to total inches]
+                  input (feet, inches, totalInches);
+                  
+                  //Function to calculate numbers to meters
+                  calculate (totalInches, meters);
+                  
+                  //Function to output result
+                  printOutput(meters);
+                  
+                  //Ask user if they would like to repeat program
+                  cout << "\nTo repeat this program enter 1, otherwise enter any key to exit " << endl; 
+                  
+                      //Input to repeat program
+                      cin >> repeat;
+                      
+          }while(repeat ==1); //END DO/WHILE loop                                                             
+                                                                        
+                  //pause screen to view output
+                  system ("pause");
+                
+                  //Here is where you indicate to the OS a successful termination of your program
+                  return 0;
+  
+ //end main         
+}
+    
+//////////////////////////////////Functions////////////////////////////////////
+    
+//INPUT FUNCTION
+//Author: Steven Leabo
+//Date Written: 4/8/2014
+//Function to input numbers (feet and inches) to total inches
+
+double input (int feet,            //IN - User defined feet to convert
+
+              float inches,        //IN - User defined inches to convert
+              
+              float& totalInches)   //OUT - Output in total inches to convert to meters
+{ 
+       totalInches = inches +(feet*12);
+} //End input
+
+
+
+//CALCULATE FUNCTION
+//Author: Steven Leabo
+//Date Written: 4/8/2014
+//Function to calculate numbers to meters
+
+double calculate (float totalInches,   //IN - User defined total inches to convert
+
+                  float& meters)       //OUT - Converted meters 
+{   
+     meters = (totalInches * .0254);   
+} //End calculate
+
+
+
+//OUTPUT FUNCTION
+//Author: Steven Leabo
+//Date Written: 4/8/2014
+//Function to output result
+
+void printOutput(float meters)     //OUT - Output of converted meters
+{ 
+     cout << "Your input feet and inches is " << meters << " meters. " << endl;
+} //End printOutput
+
+
