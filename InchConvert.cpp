@@ -1,5 +1,4 @@
 /**********************************************************************
-* Program Name: Program 3
 * Author: Steven Leabo
 * Program description: This program will ask the user to input two values
 * in inches. The first is the starting value which is the start of a range
