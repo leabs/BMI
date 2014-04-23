@@ -1,5 +1,4 @@
 /**********************************************************************
-* Program Name: Lab 6
 * Author: Steven Leabo
 * Program description: This program will find the average of a user defined
 * amount of grades. It will first ask how many grades the user would like to enter,
