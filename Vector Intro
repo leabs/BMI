@@ -16,7 +16,7 @@ void printVector(vector<int> x)
 int main()
 {
           
-    vector<int> v(3);
+    vector<int> v(3,0);
     
     v[0] = 10;
     v[1] = 22;
